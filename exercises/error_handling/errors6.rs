@@ -1,17 +1,24 @@
+/*
+ * @FilePath: \rustlings\exercises\error_handling\errors6.rs
+ * @Author: error: git config user.name & please set dead value or install git
+ * @文件版本: V1.0.0
+ * @Date: 2023-07-04 18:51:33
+ * @Description: 
+ * 
+ * 版权信息         : 2023 by ${git_name}, All Rights Reserved.
+ */
 // errors6.rs
-//
+
 // Using catch-all error types like `Box<dyn error::Error>` isn't recommended
 // for library code, where callers might want to make decisions based on the
-// error content, instead of printing it out or propagating it further. Here, we
-// define a custom error type to make it possible for callers to decide what to
-// do next when our function returns an error.
-//
-// Execute `rustlings hint errors6` or use the `hint` watch subcommand for a
-// hint.
+// error content, instead of printing it out or propagating it further. Here,
+// we define a custom error type to make it possible for callers to decide
+// what to do next when our function returns an error.
 
-// I AM NOT DONE
+// Execute `rustlings hint errors6` or use the `hint` watch subcommand for a hint.
 
-use std::num::ParseIntError;
+
+use std::{num::ParseIntError, f32::consts::E};
 
 // This is a custom error type that we will be using in `parse_pos_nonzero()`.
 #[derive(PartialEq, Debug)]
@@ -31,7 +38,10 @@ impl ParsePosNonzeroError {
 fn parse_pos_nonzero(s: &str) -> Result<PositiveNonzeroInteger, ParsePosNonzeroError> {
     // TODO: change this to return an appropriate error instead of panicking
     // when `parse()` returns an error.
-    let x: i64 = s.parse().unwrap();
+    if let Err(e) = s.parse::<i64>(){
+      return Err(ParsePosNonzeroError::ParseInt(e));
+    }
+    let x = s.parse().unwrap();
     PositiveNonzeroInteger::new(x).map_err(ParsePosNonzeroError::from_creation)
 }
 

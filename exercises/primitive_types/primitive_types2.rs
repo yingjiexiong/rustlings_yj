@@ -1,12 +1,16 @@
+/*
+ * @FilePath: \rustlings\exercises\primitive_types\primitive_types2.rs
+ * @Author: error: git config user.name & please set dead value or install git
+ * @文件版本: V1.0.0
+ * @Date: 2023-07-04 18:51:33
+ * @Description: 
+ * 
+ * 版权信息         : 2023 by ${git_name}, All Rights Reserved.
+ */
 // primitive_types2.rs
-//
-// Fill in the rest of the line that has code missing! No hints, there's no
-// tricks, just get used to typing these :)
-//
-// Execute `rustlings hint primitive_types2` or use the `hint` watch subcommand
-// for a hint.
+// Fill in the rest of the line that has code missing!
+// No hints, there's no tricks, just get used to typing these :)
 
-// I AM NOT DONE
 
 fn main() {
     // Characters (`char`)
@@ -22,7 +26,7 @@ fn main() {
         println!("Neither alphabetic nor numeric!");
     }
 
-    let // Finish this line like the example! What's your favorite character?
+    let your_character = 'C';// Finish this line like the example! What's your favorite character?
     // Try a letter, try a number, try a special character, try a character
     // from a different language than your own, try an emoji!
     if your_character.is_alphabetic() {
